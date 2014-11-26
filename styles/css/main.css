@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:300);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+/* My variables are here!*/
+body {
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 200%;
+  font-weight: 300; }
+
+/* Extends/Inheritance, nested*/
+a {
+  text-decoration: none;
+  color: #0000AA; }
+  a hover {
+    color: #0000EE; }
+  a a:focus {
+    @extends hover; }
+
+/* Extends/Inheritance: h2 & h3*/
+/* Expression: increased h1 size in relation to body size*/
+h1 {
+  font-family: "Raleway", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 200% x 0.3333333333;
+  margin: 0; }
+
+h2 {
+  @extends h1;
+  color: #505050;
+  font-size: 150%; }
+
+h3 {
+  @extends h1;
+  font-size: 125%;
+  color: #505050; }
+
+header {
+  padding: 1em;
+  background-color: #FA5A0F;
+  border-bottom: 5px #EA4A00;
+  color: #FFFFFF; }
+  header p {
+    font-size: 120%;
+    color: #EEEEEE;
+    margin: 0; }
+
+.container-fluid {
+  margin: 20px, 20px, 20px, 30%; }
+
+/* Nesting example*/
+nav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* function used here: changed color*/ }
+  nav ul {
+    margin: 0;
+    padding: 0; }
+  nav li {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 1em; }
+  nav a {
+    color: #55E; }
+  nav a:hover, nav a:focus {
+    color: #e5a0e9; }
+
+/* Extends/Inheritance example*/
+#page {
+  padding: 2em; }
+
+#menu {
+  @extends #page;
+  background-color: rgba(207, 205, 140, 0.5); }
+  #menu dt {
+    font-weight: 400; }
+  #menu dd {
+    font-style: italic;
+    font-size: 16px;
+    margin-left: 1em;
+    margin-bottom: 1em; }
+
+#about {
+  @extends #page; }
+
+footer {
+  background-color: #FC892F;
+  border-top: 5px #EC791F;
+  font-size: 80%;
+  text-align: right;
+  padding: 1em; }
+
+@media screen and (max-width: 991px) {
+  body {
+    background-image: none;
+    font-size: 16px; }
+
+  main {
+    margin: 0px; }
+
+  .container-fluid {
+    margin-top: 0px;
+    margin-bottom: 0px; }
+
+  nav {
+    position: initial; }
+
+  header p {
+    display: none; } }
